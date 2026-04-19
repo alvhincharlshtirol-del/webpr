@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e2e8f0;
+}
+
+.ppf-container {
+  width: 200px;           /* Frame width */
+  height: 200px;          /* Frame height (must match width) */
+  border-radius: 50%;     /* Rounds the corners into a circle */
+  overflow: hidden;       /* Hides image parts outside the circle */
+  border: 5px solid #161616; /* Optional: Frame border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ppf-container img {
+  width: 100%;            /* Fits image to container width */
+  height: 100%;           /* Fits image to container height */
+  object-fit: cover;      /* Maintains aspect ratio without stretching */
+}
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    font-size: 40px;
+    color: #38bdf8;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #e2e8f0;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.container {
+    width: 85%;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+.skills {
+    text-align: center;
+}
+
+.skills li {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    padding: 10px 15px;
+    margin: 8px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.skills li:hover {
+    background: #38bdf8;
+    color: #020617;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border-left: 4px solid #38bdf8;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #94a3b8;
+}
+
+button {
+    padding: 12px;
+    background: #38bdf8;
+    color: #020617;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0ea5e9;
+    box-shadow: 0 0 10px #38bdf8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: rgba(15, 23, 42, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+}
+/* Tablets */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        margin: 1.5rem 1rem;
+        padding: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 0 8px;
+    }
+
+    .skills {
+        gap: 8px;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .skills {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        text-align: center;
+    }
+
+    form input,
+    form textarea {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
